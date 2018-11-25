@@ -40,21 +40,5 @@ y_pred = (y_pred > 0.5)
 from sklearn.metrics import confusion_matrix
 from sklearn.ensemble.partial_dependence import partial_dependence, plot_partial_dependence
 cm = confusion_matrix(y_test, y_pred)
-plt.xlabel("Credit Score")
-plt.ylabel("Is Exited")
-plt.plot(dataset['CreditScore'],dataset['Exited'])
-my_plots = plot_partial_dependence(classifier,       
-                                   features=[2], # column numbers of plots we want to show
-                                   X=X_train,            # raw predictors data.
-                                   feature_names=['Credit Score'], # labels on graphs
-                                   grid_resolution=10) # number of values to plot on x axis
-import matplotlib.pyplot as plt
-import pandas
-names = ['CreditScore', 'Age', 'Balance', 'EstimatedSalary']
-data = pandas.read_csv('Churn_Modelling.csv', names=names)
-data.hist()
-plt.show()
-names = ['CreditScore', 'Age', 'Balance', 'EstimatedSalary']
-data = pd.read_csv('Churn_Modelling.csv', names=names)
-data.hist()
-plt.show()
+
+
